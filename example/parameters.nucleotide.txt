@@ -1,0 +1,2 @@
+fasta	PA14.nucleotide.fasta
+dbtype	nucleotide

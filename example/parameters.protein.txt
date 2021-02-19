@@ -1,0 +1,2 @@
+fasta	PA14.protein.fasta
+dbtype	protein

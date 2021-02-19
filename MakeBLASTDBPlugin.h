@@ -16,6 +16,7 @@ public:
 private: 
  std::string inputfile;
  std::string outputfile;
+std::map<std::string, std::string> parameters;
 
 private:
  int MakeBLASTDBPlugin::isFile(const char*);

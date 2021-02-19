@@ -25,6 +25,15 @@ int MakeBLASTDBPlugin::isFile(const char* name)
 
 void MakeBLASTDBPlugin::input(std::string file) {
  inputfile = file;
+ std::ifstream ifile(inputfile.c_str(), std::ios::in);
+ while (!ifile.eof()) {
+   std::string key, value;
+   ifile >> key;
+   ifile >> value;
+   parameters[key] = value;
+ }
+
+
 }
 
 void MakeBLASTDBPlugin::run() {}
@@ -39,10 +48,15 @@ myCommand += "makeblastdb";
 myCommand += " ";
 myCommand += "-in";
 myCommand += " ";
-myCommand += inputfile + " ";
+myCommand += std::string(PluginManager::prefix()) + "/" + parameters["fasta"] + " ";
+if (parameters["dbtype"] == "nucleotide") {
+                      myCommand += "-dbtype nucl";
+                      myCommand += " ";
+}
 myCommand += "-out";
 myCommand += " ";
 myCommand += outputfile + " ";
+std::cout << myCommand << std::endl;
  system(myCommand.c_str());
 }
 else {
@@ -68,7 +82,11 @@ else {
                    myCommand += " ";
                    myCommand += "-in";
                    myCommand += " ";
-                   myCommand += inputfile + "/" + ptr1 + ".fasta" + " ";
+                   myCommand += std::string(PluginManager::prefix()) + "/" + parameters["fasta"] + "/" + ptr1 + ".fasta" + " ";
+                   if (parameters["dbtype"] == "nucleotide") {
+                      myCommand += "-dbtype nucl";
+                      myCommand += " ";
+                   }
                    myCommand += "-out";
                    myCommand += " ";
                    myCommand += outputfile + "/" + ptr1 + ".db" + " ";

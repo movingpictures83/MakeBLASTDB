@@ -1,3 +1,4 @@
 Prefix plugins/MakeBLASTDB/example
-Plugin MakeBLASTDB inputfile PA14.fasta outputfile PA14.db
+Plugin MakeBLASTDB inputfile parameters.protein.txt outputfile PA14.db
+Plugin MakeBLASTDB inputfile parameters.nucleotide.txt outputfile PA14.db
 #Plugin MakeBLASTDB inputfile fasta outputfile db

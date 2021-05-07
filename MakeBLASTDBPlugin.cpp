@@ -53,6 +53,10 @@ if (parameters["dbtype"] == "nucleotide") {
                       myCommand += "-dbtype nucl";
                       myCommand += " ";
 }
+else {
+                      myCommand += "-dbtype prot";
+                      myCommand += " ";
+}
 myCommand += "-out";
 myCommand += " ";
 myCommand += outputfile + " ";

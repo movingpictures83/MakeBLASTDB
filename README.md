@@ -3,7 +3,7 @@
 # Input: TXT
 # Output: DB
 # Tested with: PluMA 1.0, GCC 4.8.4
-# Dependency: BLAST 2.2.25
+# Dependency: BLAST 2.2.28
 
 PluMA plugin to build a database of sequences from an input
 FASTA file using BLAST (Altschul et al, 1990).

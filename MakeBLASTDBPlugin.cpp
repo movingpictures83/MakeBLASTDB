@@ -57,6 +57,9 @@ else {
                       myCommand += "-dbtype prot";
                       myCommand += " ";
 }
+if (parameters.count("parse") != 0) {
+   myCommand += "-parse_"+parameters["parse"]+" ";
+}
 myCommand += "-out";
 myCommand += " ";
 myCommand += outputfile + " ";
